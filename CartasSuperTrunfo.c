@@ -14,9 +14,7 @@ int main() {
     char nome[100];
     
     printf("Digite o nome da cidade:");
-    fgets(nome, sizeof(nome), stdin);
-
-    getchar();
+    scanf("%c", &nome );
 
     printf("Digite o código da cidade\n");
     scanf("%d", &codigodacidade);
