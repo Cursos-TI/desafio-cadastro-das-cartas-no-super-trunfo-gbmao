@@ -373,7 +373,7 @@ int main() {
     }
 
     
-    int resultadofinal = resultado1 + resultado2;
+    int resultadofinal = resultado1 + resultado2; // resultadofinal for positivo == vitoria da primeira carta, resultadofinal jnegativo == vitoria da segunda carta e 0 == empate
     //printf("resultado 1 = %d\n", resultado1);
     //printf("resultado 2 = %d\n", resultado2);
     //printf("%d\n", resultadofinal);
