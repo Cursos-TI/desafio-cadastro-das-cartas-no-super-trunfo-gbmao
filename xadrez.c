@@ -1,29 +1,71 @@
 #include <stdio.h>
 
+void cima(int n){
+    if (n > 0) {
+        printf("Cima\n");
+        cima(n - 1);
+    }
+}
+
+void baixo(int n){
+    if (n > 0) {
+        printf("Baixo\n");
+        baixo(n - 1);
+    }
+}
+
+void direita(int n){
+    if (n > 0) {
+        printf("Direita\n");
+        direita(n - 1);
+    }
+}
+
+void esquerda(int n){
+    if (n > 0) {
+        printf("Esquerda\n");
+        esquerda(n - 1);
+    }
+}
+
 int main(){
+
+    int torre, bispo, rainha, cavalo;
     // movimento da torre 5 casas pra direita
-    for ( int i = 0; i < 5; i++)
-    {
-        printf("Torre: Direita\n");
-    }
+    
+        printf("Quantas casas deseja mover a Torre?\n");
+        scanf("%d", &torre); //escolher quantas casas quer mover
+        printf("Torre:\n");
+        for (int i = 0; i < torre; i++)
+        {
+            direita(1);
+        }
+        
+    
     // movimento do bispo 5 casas pra direita, cima
-    for (int i = 0; i < 5; i++)
-    {
-        printf("Bispo: direita, cima\n");
-    }
+        printf("Quantas casas deseja mover o bispo?\n");
+        scanf("%d", &bispo); //escolher quantas casas quer mover
+        printf("Bispo:\n");
+        for (int i = 0; i < bispo; i++)
+        {
+            direita(1);
+            cima(1);
+        }
 
     //movimento rainha 8 casas pra esquerda
 
-    for (int i = 0; i < 8; i++)
-    {
-        printf("Rainha: Esquerda\n");
-    }
+    printf("Quantas casas deseja mover a Rainha?\n");
+        scanf("%d", &rainha); //escolher quantas casas quer mover
+        printf("Rainha:\n");
+        for (int i = 0; i < rainha; i++)
+        {
+            esquerda(1);
+        }
     
 
-    // movimento cava 2 casa pra cima e 1 direita 
-
-    for (int i = 0; i < 3; i++)
-    {   
+    // movimento cavalo 2 casa pra cima e 1 direita 
+    
+      
         char primeiromov, segundomov;
         printf("Pra onde você deseja mover o cavalo? \n");
         printf("C. Cima\n");
@@ -37,10 +79,8 @@ int main(){
         {
         case 'c': // caso de escolher cima
         case 'C':
-            for ( int a = 1; a <= 2; a++)
-            {
-                printf("Cima\n");
-            }    
+            cima(2);    // o movimento do cavalo
+        
             printf("Deve se mover para direita ou esquerda?\n");
             printf("D. direita\n");
             printf("E. esquerda\n");
@@ -48,9 +88,9 @@ int main(){
 
             if (segundomov == 'd' || segundomov == 'D')
             {
-                    printf("Direita\n");
+                    direita(1);
             } else  {
-                    printf("Esquerda\n");
+                    esquerda(1);
             }
                 
             
@@ -58,10 +98,9 @@ int main(){
 
         case 'B': // caso de escolher baixo
         case 'b':
-            for ( int a = 1; a <= 2; a++)
-            {
-                printf("Baixo\n");
-            }    
+            
+                baixo(2);
+                
             printf("Deve se mover para direita ou esquerda?\n");
             printf("D. direita\n");
             printf("E. esquerda\n");
@@ -69,9 +108,9 @@ int main(){
 
             if (segundomov == 'd' || segundomov == 'D')
             {
-                    printf("Direita\n");
+                    direita(1);
             } else  {
-                    printf("Esquerda\n");
+                    esquerda(1);
             }
                 
             
@@ -79,10 +118,9 @@ int main(){
 
         case 'D': // caso seja escolhido direita
         case 'd':
-            for ( int a = 1; a <= 2; a++)
-            {
-                printf("Direita\n");
-            }    
+            
+            direita(2); // o primeiro movimento
+
             printf("Deve se mover para cima ou para baixo?\n");
             printf("C. Cima\n");
             printf("B. Baixo\n");
@@ -90,19 +128,18 @@ int main(){
 
             if (segundomov == 'b' || segundomov == 'B')
             {
-                    printf("Baixo\n");
+                    baixo(1);
             } else  {
-                    printf("Cima\n");
+                    cima(1);
             }
                 
             
             break;
         case 'E': // caso a escolha seja esquerda
         case 'e':
-                for ( int a = 1; a <= 2; a++)
-                {
-                    printf("Esquerda\n");
-                }    
+                
+            esquerda(2);
+                //segunda escolha de movimento
                 printf("Deve se mover para cima ou para baixo?\n");
                 printf("C. Cima\n");
                 printf("B. Baixo\n");
@@ -110,9 +147,9 @@ int main(){
     
                 if (segundomov == 'b' || segundomov == 'B')
                 {
-                        printf("Baixo\n");
+                        baixo(1);
                 } else  {
-                        printf("Cima\n");
+                        cima(1);
                 }
                     
                 
@@ -121,7 +158,7 @@ int main(){
         default:
             break;
         }
-    }
+    
     
     
 
