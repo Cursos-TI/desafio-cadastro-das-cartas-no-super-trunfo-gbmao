@@ -25,7 +25,7 @@ int main(){
     } 
     printf("\n"); 
     
-
+    
     //definindo local do centro cruz
      cruzcoluna = 5;    
      cruzlinha = 6;
